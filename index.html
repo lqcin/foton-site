@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061018">
+<title>FOTON Görüntüleme | Kanal CCTV ve Proje Portalı</title>
+<meta name="description" content="FOTON Görüntüleme: kanal CCTV görüntüleme, kusur tespiti, 4K video arşivi, dijital raporlama, CAD ve müşteri portalı.">
+<style>
+:root{--bg:#061018;--panel:#0b1d29;--line:#173b50;--text:#f3fbff;--muted:#91a9b7;--cyan:#38e8ff;--cyan2:#78f4ff;--green:#7cff9b;--red:#ff6e7a;--yellow:#ffd36e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 7%,rgba(56,232,255,.09),transparent 24%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.wrap{width:min(1440px,92vw);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(6,16,24,.88);border-bottom:1px solid rgba(120,244,255,.08);backdrop-filter:blur(18px)}.header{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.2em}.brand small{display:block;font-size:8px;color:#7895a8;margin-top:3px;letter-spacing:.22em}.orb{width:42px;height:42px;border-radius:50%;position:relative;border:1px solid rgba(56,232,255,.55)}.orb:before{content:"";position:absolute;width:8px;height:8px;border-radius:50%;left:16px;top:16px;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}nav{display:flex;gap:5px;align-items:center}nav a,nav button{background:transparent;border:0;color:#dceaf2;padding:10px 11px;border-radius:9px;cursor:pointer}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid #264d62!important;padding:11px 15px!important;border-radius:10px!important;background:transparent;color:white;cursor:pointer}.primary{background:linear-gradient(135deg,var(--cyan),var(--cyan2))!important;color:#00181d!important;border-color:transparent!important;font-weight:900}.mobile{display:none;background:#0b1e2a;color:white;border:1px solid #264d62;border-radius:10px;padding:10px}
+.hero{min-height:760px;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;padding:76px 0 48px}.eyebrow{font-size:11px;color:var(--cyan);font-weight:900;letter-spacing:.18em;text-transform:uppercase}h1{font-size:clamp(54px,7vw,102px);line-height:.91;letter-spacing:-.055em;margin:18px 0 25px}.outline{color:transparent;-webkit-text-stroke:1px rgba(243,251,255,.62)}.hero p{font-size:20px;line-height:1.65;color:#a8bdc9;max-width:760px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.scanner{min-height:550px;border-radius:32px;border:1px solid rgba(120,244,255,.13);overflow:hidden;position:relative;background:radial-gradient(circle,#294b5d 0 14%,#183343 15% 28%,#0b1c28 29% 43%,#061018 44%);box-shadow:0 28px 80px rgba(0,0,0,.3)}.scanner:after{content:"";position:absolute;inset:16%;border-radius:50%;border:1px dashed rgba(120,244,255,.2);animation:spin 22s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.beam{position:absolute;left:10%;right:10%;top:50%;height:2px;background:var(--cyan);box-shadow:0 0 26px var(--cyan)}.pulse{position:absolute;width:18px;height:18px;border-radius:50%;left:48.4%;top:48.4%;background:var(--cyan);box-shadow:0 0 40px var(--cyan)}.scan-card{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(6,16,24,.89);border:1px solid #1a4357;border-radius:17px;padding:18px}.scan-card h3{margin:0 0 8px}.scan-card p{font-size:13px;line-height:1.5;color:#8fa9b7;margin:0}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-bottom:24px}.trust>div{border:1px solid #143448;background:#081721;border-radius:14px;padding:14px 16px}.trust b{display:block;font-size:14px}.trust span{font-size:11px;color:#7895a5}
+.section{padding:84px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}.section h2{font-size:clamp(34px,4vw,58px);letter-spacing:-.04em;margin:0}.section-head p{max-width:630px;color:var(--muted);line-height:1.65}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:linear-gradient(180deg,#0c1e2a,#091721);border:1px solid var(--line);border-radius:20px;padding:22px}.service{min-height:240px}.service h3{font-size:24px;margin:38px 0 10px}.service p,.feature p{color:#8fa8b6;line-height:1.6}.num{font-size:11px;color:var(--cyan);font-weight:900;letter-spacing:.15em}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.step{min-height:150px;background:#0a1b27;border:1px solid var(--line);border-radius:15px;padding:16px}.step b{color:var(--cyan);font-size:11px}.step h4{margin:23px 0 7px}.step p{font-size:12px;color:#819baa;line-height:1.5}
+.platform{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;background:#081923;border:1px solid var(--line);border-radius:28px;padding:22px}.platform-copy{padding:28px}.platform-copy h2{font-size:48px}.platform-copy p{color:var(--muted);line-height:1.65}.dashboard{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#071720}.dash-top{height:48px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 14px}.badge{font-size:10px;padding:5px 8px;border-radius:999px;background:#123247;color:#b9d4df}.dash-body{display:grid;grid-template-columns:180px 1fr;min-height:460px}.side{padding:18px;border-right:1px solid var(--line);background:#06131c}.side span{display:block;color:#819ba9;padding:9px;border-radius:8px}.side span:first-of-type{background:#102837;color:white;margin-top:18px}.main{padding:18px}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.project{background:#0b202d;border:1px solid var(--line);border-radius:13px;padding:13px}.project h4{margin:8px 0}.bar{height:6px;background:#173447;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--green))}.mapbox{margin-top:12px;border:1px solid var(--line);border-radius:13px;background:#06131c;padding:8px}
+.feature{min-height:185px}.feature h3{margin:18px 0 8px}.icon{font-size:26px;color:var(--cyan)}
+.archive{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;border:1px solid var(--line);border-radius:26px;padding:22px;background:linear-gradient(135deg,#081923,#0b202b)}.archive h2{font-size:46px}.archive p{color:var(--muted);line-height:1.65}.timeline{display:grid;gap:10px;padding:14px}.timeline>div{display:grid;grid-template-columns:110px 1fr;gap:15px;align-items:center;border:1px solid #17394c;background:#071720;border-radius:14px;padding:14px}.timeline b{font-size:18px}.timeline span{font-size:12px;color:#8aa2af}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.portal-card{min-height:250px;padding:26px;border:1px solid var(--line);border-radius:22px;background:#081923}.portal-card h3{font-size:30px;margin:15px 0 10px}.portal-card p{color:var(--muted);line-height:1.6}
+.faq{display:grid;gap:10px}.faq-item{border:1px solid var(--line);background:#081923;border-radius:14px;overflow:hidden}.faq-q{width:100%;display:flex;justify-content:space-between;background:transparent;border:0;color:white;padding:17px;text-align:left;font-weight:800;cursor:pointer}.faq-a{display:none;padding:0 17px 17px;color:var(--muted);line-height:1.6}.faq-item.open .faq-a{display:block}
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px}.contact h2{font-size:45px}.contact p{color:var(--muted);line-height:1.65}.contact-form{display:grid;gap:10px}.contact-form input,.contact-form textarea,.contact-form select{width:100%;background:#06131c;border:1px solid #1c4255;color:white;padding:12px;border-radius:10px}.contact-form textarea{min-height:120px}
+footer{border-top:1px solid #143145;padding:30px 0;color:#7893a3;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.modal{position:fixed;inset:0;background:#000c;z-index:100;display:none;place-items:center;padding:18px}.modal.show{display:grid}.modal-card{width:min(720px,96vw);background:#071720;border:1px solid #1a4357;border-radius:22px;padding:22px}.modal-head{display:flex;justify-content:space-between;align-items:center}.close{background:transparent;border:1px solid #294e62;color:white;border-radius:9px;padding:8px 10px}.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.choice button{padding:18px;text-align:left;background:#0a1d29;border:1px solid #1b4155;color:white;border-radius:14px}.choice b{display:block;font-size:17px}.choice span{display:block;color:#829dab;font-size:12px;margin-top:5px}.toast{position:fixed;right:20px;bottom:20px;background:#0d2a35;border:1px solid #28586d;color:white;padding:13px 16px;border-radius:12px;display:none;z-index:150}.toast.show{display:block}
+@media(max-width:1050px){.hero,.platform,.archive,.contact{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.process{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){nav{display:none;position:fixed;left:4vw;right:4vw;top:84px;background:#081923;border:1px solid var(--line);border-radius:16px;padding:10px;flex-direction:column;align-items:stretch}nav.open{display:flex}nav a,nav button{width:100%;text-align:left}.mobile{display:block}.hero{padding-top:50px}.scanner{min-height:420px}.trust,.grid3,.grid4,.portal-grid{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.dash-body{grid-template-columns:1fr}.side{display:none}.projects{grid-template-columns:1fr}.choice{grid-template-columns:1fr}}
+
+/* FOTON PUBLIC MEDIA V9 */
+.media-hero{background:radial-gradient(circle,#294b5d 0 14%,#183343 15% 28%,#0b1c28 29% 43%,#061018 44%)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;z-index:1}
+.hero-video.media-missing{display:none}
+.media-fallback{position:absolute;inset:0;z-index:0;overflow:hidden}
+.fallback-label{position:absolute;top:22px;left:22px;padding:7px 9px;border:1px solid rgba(56,232,255,.18);background:rgba(6,16,24,.75);border-radius:8px;font-size:10px;color:#8cb9c5;letter-spacing:.12em}
+.media-hero .scan-card{z-index:3}
+.media-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.media-card{margin:0;background:#081923;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.media-card-wide{grid-column:span 2}
+.media-frame{aspect-ratio:4/3;background:linear-gradient(135deg,#0b2130,#07131b);position:relative;overflow:hidden}
+.media-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.media-placeholder{position:absolute;inset:0;display:grid;place-items:center;padding:18px;text-align:center;color:#6f93a4;font-size:12px;letter-spacing:.08em;background:
+linear-gradient(135deg,rgba(56,232,255,.04),transparent),
+repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.018) 22px 23px)}
+.media-card figcaption{display:grid;gap:3px;padding:13px 14px}.media-card figcaption span{font-size:11px;color:#7895a4}
+.video-showcase{display:grid;grid-template-columns:.82fr 1.18fr;gap:18px;margin-top:20px;padding:22px;border:1px solid var(--line);border-radius:22px;background:#081923}
+.video-copy{padding:20px}.video-copy h3{font-size:32px;line-height:1.15;margin:13px 0}.video-copy p{color:var(--muted);line-height:1.6}
+.media-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.media-tags span{border:1px solid #1b4256;background:#0a202d;color:#9fc0cd;border-radius:999px;padding:7px 9px;font-size:10px}
+.public-video-shell{position:relative;min-height:340px;background:#020607;border:1px solid #17394c;border-radius:15px;overflow:hidden;display:grid;place-items:center}
+.public-video-shell video{width:100%;height:100%;max-height:520px;object-fit:contain;z-index:2;background:#000}
+.public-video-shell video.media-missing{display:none}
+.public-video-fallback{position:absolute;inset:0;display:grid;place-items:center;color:#7395a4;font-size:12px;letter-spacing:.12em}
+@media(max-width:1050px){.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-showcase{grid-template-columns:1fr}.media-card-wide{grid-column:span 2}}
+@media(max-width:760px){.media-grid{grid-template-columns:1fr}.media-card-wide{grid-column:auto}.video-showcase{padding:13px}.video-copy{padding:8px}.public-video-shell{min-height:220px}}
+
+
+/* FOTON Public Site V10 - real media + lightbox */
+.media-frame img{cursor:zoom-in}
+.media-lightbox{position:fixed;inset:0;z-index:220;background:rgba(0,0,0,.88);display:none;place-items:center;padding:18px;backdrop-filter:blur(8px)}
+.media-lightbox.show{display:grid}
+.media-lightbox-card{position:relative;width:min(1180px,96vw);max-height:94vh;display:grid;gap:10px}
+.media-lightbox-card img{width:100%;max-height:84vh;object-fit:contain;border-radius:16px;border:1px solid #21495d;background:#020607;box-shadow:0 30px 90px rgba(0,0,0,.5)}
+.media-lightbox-close{position:absolute;right:10px;top:10px;z-index:3;width:42px;height:42px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(6,16,24,.78);color:white;font-size:27px;cursor:pointer}
+.media-lightbox-caption{text-align:center;color:#b3c6d0;font-size:13px}
+@media(max-width:760px){.media-lightbox{padding:8px}.media-lightbox-card img{max-height:80vh;border-radius:12px}.media-lightbox-close{width:38px;height:38px}}
+
+
+/* FOTON V11 - tüm galeri fotoğrafları aynı ölçü */
+.media-grid{
+  align-items:stretch;
+}
+.media-card{
+  display:grid;
+  grid-template-rows:auto 1fr;
+  min-height:100%;
+}
+.media-frame{
+  aspect-ratio:4 / 3 !important;
+  width:100%;
+  height:auto;
+  overflow:hidden;
+  background:#07131b;
+}
+.media-frame img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center center;
+}
+.media-card-wide{
+  grid-column:span 1 !important;
+}
+.media-card figcaption{
+  min-height:64px;
+}
+@media(min-width:1051px){
+  .media-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+}
+@media(min-width:761px) and (max-width:1050px){
+  .media-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+}
+@media(max-width:760px){
+  .media-grid{grid-template-columns:1fr !important}
+  .media-card figcaption{min-height:auto}
+}
+
+
+/* FOTON V14 - video yerleşimi ve kayıt akışı */
+.media-hero.video-ready .media-fallback{display:none}
+.hero-play-fallback{
+  border:1px solid rgba(56,232,255,.25);
+  color:#bdebf2;
+  cursor:pointer;
+  z-index:4;
+}
+.hero-play-fallback:hover{border-color:#38e8ff;color:white}
+.media-hero.hero-autoplay-blocked .media-fallback{display:block;z-index:4;background:linear-gradient(180deg,transparent,rgba(2,8,12,.3))}
+.media-hero.hero-autoplay-blocked .beam,
+.media-hero.hero-autoplay-blocked .pulse{display:none}
+.record-demo{display:grid;grid-template-columns:1.08fr .92fr;gap:15px}
+.record-control,.record-flow{min-height:420px}
+.record-status-row{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.record-status-row h3{font-size:31px;margin:7px 0 5px}
+.record-status-row p{margin:0;color:#88a3b1}
+.record-state{padding:8px 11px;border-radius:999px;font-size:11px;font-weight:900;letter-spacing:.08em}
+.record-state.ready{background:#143247;color:#b8d5e1}
+.record-state.live{background:#4b2028;color:#ffb5bc;box-shadow:0 0 18px rgba(255,110,122,.15)}
+.record-state.done{background:#103829;color:#a7efbd}
+.record-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:22px 0}
+.record-metrics>div{padding:13px;border:1px solid #17394c;background:#071720;border-radius:12px}
+.record-metrics small{display:block;color:#7895a4;margin-bottom:5px}
+.record-actions{display:flex;gap:8px;flex-wrap:wrap}
+.record-log{margin-top:18px;border-top:1px solid #16374a;padding-top:10px;display:grid;gap:7px}
+.record-log>div{display:grid;grid-template-columns:76px 1fr auto;gap:9px;align-items:center;padding:9px;border-radius:9px;background:#071720}
+.record-log span{color:#6ce5ff;font-size:11px}.record-log small{color:#7895a4}
+.record-flow h3{font-size:31px;margin:10px 0 18px}
+.record-result-list{display:grid;gap:8px}
+.record-result-list>div{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:start;padding:10px;border:1px solid #16384b;border-radius:11px;background:#071720}
+.record-result-list>div>span{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#103245;color:#38e8ff;font-weight:900}
+.record-result-list p{margin:0}.record-result-list small{display:block;color:#7895a4;margin-top:3px}
+@media(max-width:900px){.record-demo{grid-template-columns:1fr}}
+@media(max-width:600px){.record-metrics{grid-template-columns:1fr}.record-log>div{grid-template-columns:62px 1fr}.record-log small{grid-column:2}.record-actions{display:grid;grid-template-columns:1fr}.record-actions button{width:100%}}
+
+</style>
+</head>
+<body>
+<header><div class="wrap header"><div class="brand"><div class="orb"></div><div>FOTON<small>KANAL GÖRÜNTÜLEME</small></div></div><button class="mobile" onclick="toggleMenu()">☰</button><nav id="nav"><a href="#hizmetler" onclick="closeMenu()">Hizmetler</a><a href="#sahadan" onclick="closeMenu()">Sahadan</a><a href="#kayit" onclick="closeMenu()">Kayıt Akışı</a><a href="#akis" onclick="closeMenu()">Nasıl Çalışır?</a><a href="#platform" onclick="closeMenu()">Platform</a><a href="#arsiv" onclick="closeMenu()">Video Arşivi</a><a href="#iletisim" onclick="closeMenu()">İletişim</a><button class="btn" onclick="openPortal()">Portal Girişi</button><a class="btn primary" href="#iletisim">Teklif Al</a></nav></div></header>
+
+<main class="wrap">
+<section class="hero"><div><div class="eyebrow">CCTV KANAL GÖRÜNTÜLEME • RAPORLAMA • PROJE TAKİBİ</div><h1>Kanalın içini görün.<br><span class="outline">Projeyi kanıtla</span> yönetin.</h1><p>FOTON; kanal görüntüleme, kusur tespiti, 4K video arşivleme, hat bazlı raporlama ve müşteri portalını tek sistemde birleştirir.</p><div class="actions"><a class="btn primary" href="#platform">Platformu İncele</a><button class="btn" onclick="openPortal()">Müşteri / Yönetici Girişi</button></div></div><div class="scanner media-hero">
+          <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto"
+                 poster="assets/images/canli-poster.webp"
+                 onloadeddata="heroVideoReady(this)"
+                 oncanplay="tryHeroPlay(this)"
+                 onerror="heroVideoError(this)">
+            <source src="assets/video/canli.mp4" type="video/mp4">
+          </video>
+          <div class="media-fallback">
+            <div class="beam"></div><div class="pulse"></div>
+            <button id="heroPlayFallback" class="fallback-label hero-play-fallback" onclick="manualHeroPlay()">▶ GERÇEK SAHA VİDEOSUNU OYNAT</button>
+          </div>
+          <div class="scan-card"><h3>Hat bazlı dijital kayıt</h3><p>Video, kusur, hat, görüntüleme tarihi ve proje bilgisi aynı kayıt altında tutulur. Sonradan “bu video hangi hattındı?” kazısı yapmaya gerek kalmaz.</p></div></div></section>
+
+<div class="trust"><div><b>CCTV Görüntüleme</b><span>Hat içi kayıt ve saha kontrolü</span></div><div><b>Kusur Tespiti</b><span>Conta, çatlak, kırık, deformasyon</span></div><div><b>Dijital Rapor</b><span>PDF ve CAD revizyonları</span></div><div><b>Müşteri Portalı</b><span>Harita, video ve proje takibi</span></div></div>
+
+<section class="section" id="hizmetler"><div class="section-head"><div><div class="eyebrow">HİZMETLER</div><h2>Sadece video teslim etmiyoruz.<br>İncelenebilir proje kaydı üretiyoruz.</h2></div><p>Görüntüleme kayıtları proje ve hat bilgileriyle birlikte tutulur. Saha, yönetim ve müşteri aynı veriye farklı yetki seviyeleriyle ulaşır.</p></div><div class="grid3"><div class="card service"><div class="num">01 / CCTV</div><h3>Kanal Görüntüleme</h3><p>Atıksu, yağmursuyu ve drenaj hatlarında kamera ile görüntüleme ve hat bazlı dijital kayıt.</p></div><div class="card service"><div class="num">02 / KONTROL</div><h3>Kusur ve Durum Tespiti</h3><p>Conta, muf, çatlak, kırık, deformasyon ve tekrar kontrol gerektiren noktaların kaydı.</p></div><div class="card service"><div class="num">03 / RAPOR</div><h3>Raporlama ve CAD</h3><p>Görüntüleme sonuçlarından teknik rapor, video inceleme çıktısı ve CAD revizyonları.</p></div></div></section>
+
+<section class="section" id="akis"><div class="section-head"><div><div class="eyebrow">İŞ AKIŞI</div><h2>Koordinattan sahaya,<br>sahadan müşteriye.</h2></div><p>Müşteri baca adı, koordinat ve akar kotlarını verir. FOTON ağı oluşturur, akar yönünü belirler ve saha sırasını hazırlar.</p></div><div class="process"><div class="step"><b>01</b><h4>Proje oluştur</h4><p>Müşteri, proje ve koordinat sistemi tanımlanır.</p></div><div class="step"><b>02</b><h4>Veriyi yükle</h4><p>Baca adı, koordinat ve akar kotları içe alınır.</p></div><div class="step"><b>03</b><h4>Akar yönü</h4><p>FOTON hat yönünü ve saha sırasını hesaplar.</p></div><div class="step"><b>04</b><h4>Görüntüleme</h4><p>Video, kusur ve hat kaydı işlenir.</p></div><div class="step"><b>05</b><h4>Canlı harita</h4><p>Uygun, kusurlu ve bekleyen hatlar güncellenir.</p></div><div class="step"><b>06</b><h4>Rapor + CAD</h4><p>PDF ve CAD revizyonları aynı veriden üretilir.</p></div></div></section>
+
+
+<section class="section" id="sahadan">
+  <div class="section-head">
+    <div><div class="eyebrow">SAHADAN</div><h2>Gerçek görüntüler,<br>gerçek proje kaydı.</h2></div>
+    <p>Bu bölüm gerçek saha fotoğrafları, kanal içi görüntüler ve ekipman kayıtlarıyla beslenecek. Dosyalar eklendikçe site otomatik olarak gerçek medyayı gösterecek.</p>
+  </div>
+
+  <div class="media-grid">
+    <figure class="media-card media-card-wide">
+      <div class="media-frame">
+        <img src="assets/images/saha-01.webp" alt="FOTON kanal görüntüleme ekipmanı ve saha sistemi" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'Saha görüntüsü 01')">
+      </div>
+      <figcaption><b>Görüntüleme ekipmanı</b><span>Kamera, kayıt/kontrol ünitesi ve saha ekipman seti</span></figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <div class="media-frame">
+        <img src="assets/images/cihaz-qpad.webp" alt="FOTON dikey kamera sistemi" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'QPAD / dikey kamera')">
+      </div>
+      <figcaption><b>Dikey kamera</b><span>Baca ve bağlantı kontrolleri</span></figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <div class="media-frame">
+        <img src="assets/images/cihaz-crawler.webp" alt="FOTON crawler kamera sistemi" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'Crawler kamera')">
+      </div>
+      <figcaption><b>Crawler görüntüleme</b><span>Yürüyen kamera sistemi ile hat içi CCTV inceleme</span></figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <div class="media-frame">
+        <img src="assets/images/cihaz-push-camera.webp" alt="Taşınabilir boru içi görüntüleme kamera sistemi" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'Taşınabilir kamera sistemi')">
+      </div>
+      <figcaption><b>Taşınabilir kamera sistemi</b><span>Hat içi hızlı görüntüleme ve kayıt ekipmanı</span></figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <div class="media-frame">
+        <img src="assets/images/kusur-conta.webp" alt="Kanal görüntülemede conta problemi" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'Conta kusuru')">
+      </div>
+      <figcaption><b>Conta / muf</b><span>Metre ve video zamanı ile kayıt</span></figcaption>
+    </figure>
+
+    <figure class="media-card">
+      <div class="media-frame">
+        <img src="assets/images/kusur-catlak.webp" alt="Kanal görüntülemede çatlak" onclick="openMediaLightbox(this)" onerror="mediaFallback(this,'Çatlak / kırık')">
+      </div>
+      <figcaption><b>Çatlak / kırık</b><span>Teknik kusur dokümantasyonu</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="video-showcase">
+    <div class="video-copy">
+      <div class="eyebrow">GÖRÜNTÜLEME ÖRNEĞİ</div>
+      <h3>Bir hattı baştan sona izlemek yerine kusura doğrudan gidin.</h3>
+      <p>Portal tarafında hat, metre, kusur ve video zamanı birbirine bağlanır. Aşağıdaki kısa video gerçek saha görüntüleme kaydından hazırlanmış örnektir.</p>
+      <div class="media-tags"><span>1080p web kopyası</span><span>4K master arşiv</span><span>Hat bazlı indeks</span></div>
+    </div>
+    <div class="public-video-shell">
+      <video controls muted playsinline preload="metadata" poster="assets/images/ornek-video-poster.webp"
+             onerror="this.classList.add('media-missing')">
+        <source src="assets/video/ornek-hat.mp4" type="video/mp4">
+      </video>
+      <div class="public-video-fallback">GERÇEK SAHA VİDEOSU</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="kayit">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">FOTON FIELD • GÖRÜNTÜLEME OTURUMU</div>
+      <h2>Hat seçilir.<br>Kayıt o hatta bağlanır.</h2>
+    </div>
+    <p>Saha ekibi yön ve dosya adıyla uğraşmaz. Proje ve sıradaki hat FOTON tarafından gelir; kayıt, kusur ve video aynı görüntüleme oturumunda tutulur.</p>
+  </div>
+
+  <div class="record-demo">
+    <div class="record-control card">
+      <div class="record-status-row">
+        <div>
+          <div class="eyebrow">AKTİF SAHA İŞİ</div>
+          <h3>YB12 → YB13</h3>
+          <p>Ø300 Yağmursuyu • 38,40 m • Akar yönü otomatik</p>
+        </div>
+        <span id="recordState" class="record-state ready">HAZIR</span>
+      </div>
+
+      <div class="record-metrics">
+        <div><small>Proje</small><b>151/8 Parsel</b></div>
+        <div><small>Operatör</small><b>FOTON FIELD</b></div>
+        <div><small>Süre</small><b id="recordTimer">00:00</b></div>
+      </div>
+
+      <div class="record-actions">
+        <button id="recordStartBtn" class="btn primary" onclick="demoRecordStart()">● Kaydı Başlat</button>
+        <button class="btn" onclick="demoDefect()">Kusur İşaretle</button>
+        <button class="btn" onclick="demoRecordStop()">■ Kaydı Bitir</button>
+      </div>
+
+      <div id="recordEventLog" class="record-log">
+        <div><span>08:15:02</span><b>Oturum hazır</b><small>YB12 → YB13</small></div>
+      </div>
+    </div>
+
+    <div class="record-flow card">
+      <div class="eyebrow">KAYIT SONUNDA</div>
+      <h3>Tek işlem, beş sonuç.</h3>
+      <div class="record-result-list">
+        <div><span>01</span><p><b>Video hatta bağlanır</b><small>Dosya adı kullanıcıya bırakılmaz.</small></p></div>
+        <div><span>02</span><p><b>Harita güncellenir</b><small>Uygun / kusurlu / tekrar kontrol.</small></p></div>
+        <div><span>03</span><p><b>Kusur zamanı kaydolur</b><small>Video saniyesi + metre bilgisi.</small></p></div>
+        <div><span>04</span><p><b>Rapor revizyonu oluşur</b><small>PDF ve video inceleme çıktısı.</small></p></div>
+        <div><span>05</span><p><b>CAD revizyonu güncellenir</b><small>DXF katmanları saha durumuyla değişir.</small></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="platform"><div class="platform"><div class="platform-copy"><div class="eyebrow">FOTON PLATFORM</div><h2>Projenin tamamı tek ekranda.</h2><p>Müşteri yalnızca kendi projelerini, yönetici ise tüm operasyonu görür. Yetki ayrımı yalnızca menüde değil backend seviyesinde uygulanır.</p><div class="actions"><button class="btn primary" onclick="openPortal()">Portal Girişi</button></div></div><div class="dashboard"><div class="dash-top"><b>FOTON</b><span class="badge">Yetkili erişim</span></div><div class="dash-body"><div class="side"><b>FOTON</b><span>Genel Bakış</span><span>Projeler</span><span>Harita</span><span>Videolar</span><span>Raporlar</span><span>CAD</span></div><div class="main"><div class="eyebrow">MÜŞTERİ PORTALI</div><h3>Aktif Projeler</h3><div class="projects"><div class="project"><small>ARNAVUTKÖY</small><h4>151/8 Parsel</h4><div class="bar"><i style="width:82%"></i></div><small>%82 tamamlandı</small></div><div class="project"><small>ARNAVUTKÖY</small><h4>152/7 Parsel</h4><div class="bar"><i style="width:64%"></i></div><small>%64 tamamlandı</small></div><div class="project"><small>ARNAVUTKÖY</small><h4>153/7 Parsel</h4><div class="bar"><i style="width:91%"></i></div><small>%91 tamamlandı</small></div></div><div class="mapbox"><svg viewBox="0 0 820 250" width="100%" height="245"><g stroke="#17384b"><path d="M20 60H800"/><path d="M20 130H800"/><path d="M20 200H800"/></g><g fill="none" stroke-width="9" stroke-linecap="round"><path d="M110 75L310 75" stroke="#7cff9b"/><path d="M310 75L535 145" stroke="#ff6e7a"/><path d="M535 145L715 205" stroke="#ffd36e"/></g><g fill="#effcff"><circle cx="110" cy="75" r="10"/><circle cx="310" cy="75" r="10"/><circle cx="535" cy="145" r="10"/><circle cx="715" cy="205" r="10"/></g></svg></div></div></div></div></div></section>
+
+<section class="section"><div class="section-head"><div><div class="eyebrow">PLATFORM ÖZELLİKLERİ</div><h2>Video klasörü değil.<br>Teknik proje hafızası.</h2></div><p>FOTON’un amacı videoyu sadece saklamak değil, proje verisiyle anlamlı ve tekrar erişilebilir hale getirmek.</p></div><div class="grid4"><div class="card feature"><div class="icon">◎</div><h3>Hat Geçmişi</h3><p>Düzeltme öncesi ve sonrası kayıtlar birlikte tutulur.</p></div><div class="card feature"><div class="icon">▶</div><h3>Video İnceleme</h3><p>Müşteri videoyu izler, kaldığı yer kaydedilir ve zaman damgalı not bırakabilir.</p></div><div class="card feature"><div class="icon">⌁</div><h3>Eğim / Profil</h3><p>Cihaz verisi varsa hat boyunca eğim profili gösterilebilir.</p></div><div class="card feature"><div class="icon">▣</div><h3>PDF + CAD</h3><p>Rapor ve DXF revizyonları aynı proje verisinden üretilir.</p></div></div></section>
+
+<section class="section" id="arsiv"><div class="archive"><div><div class="eyebrow">VIDEO YAŞAM DÖNGÜSÜ</div><h2>4K kayıt, kontrollü arşiv.</h2><p>Orijinal kayıt korunur. Portal erişimi ve arşiv süresi maliyeti kontrol edecek şekilde yönetilir.</p></div><div class="timeline"><div><b>0–6 Ay</b><div><strong>Aktif izleme</strong><br><span>Portal player + orijinal indirme</span></div></div><div><b>6–12 Ay</b><div><strong>Arşiv / indirme</strong><br><span>Player kapanır, orijinal kayıt indirilebilir</span></div></div><div><b>12 Ay+</b><div><strong>Süre doldu</strong><br><span>Metadata kalır, video erişimi kapanır</span></div></div></div></div></section>
+
+<section class="section"><div class="section-head"><div><div class="eyebrow">PORTAL ERİŞİMİ</div><h2>Müşteri ve yönetici<br>aynı kapıdan, farklı yetkiyle.</h2></div><p>Her iki kullanıcı tipi aynı güvenli giriş ekranını kullanır. Backend rolü belirler; müşteri yalnızca kendi projelerini görür.</p></div><div class="portal-grid"><div class="portal-card"><div class="eyebrow">MÜŞTERİ</div><h3>Müşteri Portalı</h3><p>Projeler, harita, görüntüleme durumu, açık kusurlar, videolar, PDF raporları ve CAD revizyonları.</p><div class="actions"><button class="btn primary" onclick="goPortal('customer')">Müşteri Girişi</button></div></div><div class="portal-card"><div class="eyebrow">YÖNETİM</div><h3>Yönetici Portalı</h3><p>Müşteri ve kullanıcı yönetimi, proje oluşturma, koordinat yükleme, saha takibi, video arşivi ve rapor/CAD yönetimi.</p><div class="actions"><button class="btn primary" onclick="goPortal('admin')">Yönetici Girişi</button></div></div></div></section>
+
+<section class="section"><div class="section-head"><div><div class="eyebrow">SIK SORULANLAR</div><h2>Nasıl çalışıyor?</h2></div><p>Kurumsal site FOTON’un vitrini; portal ise yetkili kullanıcıların proje alanı.</p></div><div class="faq"><div class="faq-item"><button class="faq-q" onclick="faq(this)">Müşteri başka projeleri görebilir mi?<span>+</span></button><div class="faq-a">Hayır. Kullanıcı yalnızca kendisine atanmış projelerin verisini API üzerinden alabilir.</div></div><div class="faq-item"><button class="faq-q" onclick="faq(this)">Koordinat dosyasından hat yönü çıkar mı?<span>+</span></button><div class="faq-a">Baca bağlantıları ve gerçek akar/taban kotları mevcutsa FOTON daha yüksek akar kotundan düşük akara doğru akış yönünü oluşturabilir.</div></div><div class="faq-item"><button class="faq-q" onclick="faq(this)">Portal şu an açık mı?<span>+</span></button><div class="faq-a">Public site yayında. Portal backend sunucusu ayrıca yayınlandığında portal.fotongoruntuleme.com üzerinden giriş yapılacak.</div></div></div></section>
+
+<section class="section" id="iletisim"><div class="contact"><div class="card"><div class="eyebrow">TEKLİF / İLETİŞİM</div><h2>Projenizi görüntüleyelim, kayıt altına alalım.</h2><p>Hat türü, yaklaşık metraj ve proje bilgisini bırakın. Form backend’e bağlandığında doğrudan teklif modülüne düşecek.</p></div><div class="card"><form class="contact-form" onsubmit="submitDemo(event)"><input required placeholder="Ad Soyad / Firma"><input required type="email" placeholder="E-posta"><select><option>Hizmet seçin</option><option>Kanal Görüntüleme</option><option>Kusur Tespiti</option><option>Dijital Raporlama</option><option>Proje Portalı</option></select><input placeholder="Yaklaşık hat uzunluğu (m)"><textarea placeholder="Proje hakkında kısa bilgi"></textarea><button class="btn primary" type="submit">Talep Oluştur</button></form></div></div></section>
+</main>
+
+<footer><div class="wrap foot"><div>© 2026 FOTON Görüntüleme • Kanal CCTV ve Altyapı Teknolojileri</div><div>fotongoruntuleme.com</div></div></footer>
+
+<div id="portalModal" class="modal" onclick="if(event.target===this)closePortal()"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow">FOTON PORTAL</div><h3>Portal erişimi</h3></div><button class="close" onclick="closePortal()">Kapat</button></div><p style="color:#91a9b7;line-height:1.6">Portal backend’i henüz internet sunucusuna taşınmadığı için test modunda. Yayına alındığında bu butonlar <b>portal.fotongoruntuleme.com</b> adresine bağlanacak.</p><div class="choice"><button onclick="goPortal('customer')"><b>Müşteri Girişi</b><span>Kendi projelerim, video, rapor ve CAD</span></button><button onclick="goPortal('admin')"><b>Yönetici Girişi</b><span>Operasyon, proje, saha ve arşiv yönetimi</span></button></div></div></div>
+
+<div id="mediaLightbox" class="media-lightbox" onclick="if(event.target===this)closeMediaLightbox()">
+  <div class="media-lightbox-card">
+    <button class="media-lightbox-close" onclick="closeMediaLightbox()" aria-label="Kapat">×</button>
+    <img id="mediaLightboxImage" alt="">
+    <div id="mediaLightboxCaption" class="media-lightbox-caption"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+const PORTAL_URL="https://portal.fotongoruntuleme.com";
+const PORTAL_ENABLED=false;
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function closeMenu(){document.getElementById('nav').classList.remove('open')}
+function faq(b){b.parentElement.classList.toggle('open')}
+function openPortal(){document.getElementById('portalModal').classList.add('show')}
+function closePortal(){document.getElementById('portalModal').classList.remove('show')}
+function goPortal(mode){if(PORTAL_ENABLED){location.href=PORTAL_URL}else{closePortal();toast((mode==="admin"?"Yönetici":"Müşteri")+" portalı hazır; sunucu yayını yapıldığında bu buton aktif olacak.")}}
+function submitDemo(e){e.preventDefault();toast("Form test modunda. Backend bağlandığında gerçek kayıt oluşturulacak.");e.target.reset()}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)}
+
+function mediaFallback(img,label){
+  const frame=img.parentElement;
+  img.remove();
+  if(!frame.querySelector('.media-placeholder')){
+    const d=document.createElement('div');
+    d.className='media-placeholder';
+    d.textContent=label+' — medya dosyası bekleniyor';
+    frame.appendChild(d);
+  }
+}
+
+
+function openMediaLightbox(img){
+  if(!img || !img.src) return;
+  const box=document.getElementById('mediaLightbox');
+  const big=document.getElementById('mediaLightboxImage');
+  const cap=document.getElementById('mediaLightboxCaption');
+  big.src=img.src;
+  big.alt=img.alt||'';
+  cap.textContent=img.alt||'';
+  box.classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeMediaLightbox(){
+  const box=document.getElementById('mediaLightbox');
+  if(box) box.classList.remove('show');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMediaLightbox()});
+
+
+let demoRecordInterval=null;
+let demoRecordSeconds=0;
+
+function heroVideoReady(video){
+  const box=video.closest('.media-hero');
+  if(box) box.classList.add('video-ready');
+}
+function heroVideoError(video){
+  video.classList.add('media-missing');
+  const box=video.closest('.media-hero');
+  if(box){box.classList.remove('video-ready');box.classList.add('hero-autoplay-blocked')}
+}
+function tryHeroPlay(video){
+  video.muted=true;
+  const p=video.play();
+  if(p && typeof p.catch==='function'){
+    p.then(()=>{
+      const box=video.closest('.media-hero');
+      if(box){box.classList.add('video-ready');box.classList.remove('hero-autoplay-blocked')}
+    }).catch(()=>{
+      const box=video.closest('.media-hero');
+      if(box){box.classList.add('hero-autoplay-blocked');box.classList.remove('video-ready')}
+    });
+  }
+}
+function manualHeroPlay(){
+  const v=document.getElementById('heroVideo');
+  if(!v)return;
+  v.muted=true;
+  v.play().then(()=>{
+    const box=v.closest('.media-hero');
+    if(box){box.classList.add('video-ready');box.classList.remove('hero-autoplay-blocked')}
+  }).catch(()=>{});
+}
+
+function demoRecordFmt(sec){
+  const m=Math.floor(sec/60),s=sec%60;
+  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+function demoRecordLog(title,detail){
+  const log=document.getElementById('recordEventLog');
+  if(!log)return;
+  const now=new Date();
+  const time=now.toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  log.insertAdjacentHTML('afterbegin',`<div><span>${time}</span><b>${title}</b><small>${detail||''}</small></div>`);
+}
+function demoRecordStart(){
+  if(demoRecordInterval)return;
+  demoRecordSeconds=0;
+  const state=document.getElementById('recordState');
+  state.textContent='● KAYIT';state.className='record-state live';
+  document.getElementById('recordTimer').textContent='00:00';
+  demoRecordLog('Görüntüleme başladı','YB12 → YB13');
+  demoRecordInterval=setInterval(()=>{
+    demoRecordSeconds++;
+    document.getElementById('recordTimer').textContent=demoRecordFmt(demoRecordSeconds);
+  },1000);
+}
+function demoDefect(){
+  if(!demoRecordInterval){showToast('Önce demo kaydını başlatın.');return}
+  demoRecordLog('Kusur işaretlendi',`${demoRecordFmt(demoRecordSeconds)} • Conta / muf kontrolü`);
+}
+function demoRecordStop(){
+  if(demoRecordInterval){clearInterval(demoRecordInterval);demoRecordInterval=null}
+  const state=document.getElementById('recordState');
+  state.textContent='TAMAMLANDI';state.className='record-state done';
+  demoRecordLog('Kayıt tamamlandı','Video hatta bağlandı • harita / rapor / CAD güncellendi');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const v=document.getElementById('heroVideo');
+  if(v){v.muted=true;setTimeout(()=>tryHeroPlay(v),250)}
+});
+
+</script>
+</body></html>
